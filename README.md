@@ -8,7 +8,7 @@ overriding Object methods as toString(), hashCode() and equals().
 
 To accomplish the requirements of the homework, I've changed the attributes
 from class Person to protected, so they are accessible only from Employee
-and Customer child classes. I've applied polymorphism adding Customers and
+and Customer classes. I've applied polymorphism adding Customers and
 Employees in a Person array and adding the walk() abstract method in Person
 in order to make that child classes override it. Finally, I've overridden 
 toString(), hashCode() and equals() methods in each non-abstract class.

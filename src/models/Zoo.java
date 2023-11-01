@@ -45,10 +45,8 @@ public class Zoo {
         Zoo zoo = (Zoo) o;
 
         if (!name.equals(zoo.name)) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        if (!Arrays.equals(animalRooms, zoo.animalRooms)) return false;
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
-        return Arrays.equals(departments, zoo.departments);
+        if (!Arrays.equals(animalRooms, zoo.getAnimalRooms())) return false;
+        return Arrays.equals(departments, zoo.getDepartments());
     }
 
     @Override
