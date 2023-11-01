@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Arrays;
+
 public class AnimalRoom {
     private String name;
     private Animal[] animals;
@@ -33,5 +35,34 @@ public class AnimalRoom {
 
     public void setCapacity(int capacity) {
         this.capacity = capacity;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        AnimalRoom that = (AnimalRoom) o;
+
+        if (capacity != that.capacity) return false;
+        if (!name.equals(that.name)) return false;
+        return Arrays.equals(animals, that.getAnimals());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + Arrays.hashCode(animals);
+        result = 31 * result + capacity;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "AnimalRoom{" +
+                "name='" + name + '\'' +
+                ", animals=" + Arrays.toString(animals) +
+                ", capacity=" + capacity +
+                '}';
     }
 }

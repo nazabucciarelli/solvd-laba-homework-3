@@ -64,5 +64,24 @@ public class Main {
         // Instantiating the zoo
         Zoo californiaZoo = new Zoo("California Zoo",zooAnimalRooms,
                                     zooDepartments);
+
+        // Instantiating customers of the zoo
+
+        Customer louis = new Customer("3942305","Louis","Smith",male,argentina,
+                                      "358472034",2);
+        Customer pablo = new Customer("493485321","Pablo","Gerardi",male,
+                                      mexico, "3584293109",7);
+        Person louis1 = new Customer("3942305","Louis","Smith",female,argentina,
+                "358472034",2);
+        Person louis2 = new Employee("3942305","Louis","Smith",female,argentina,2010,204);
+
+        // Applying the concept of polymorphism
+        Person[] persons = {vet,manager,securityGuard,louis,pablo};
+
+        for(Person p: persons){
+            p.walk();
+        }
+
+        System.out.println(louis1.equals(louis2));
     }
 }

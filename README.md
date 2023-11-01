@@ -4,6 +4,15 @@ Automation Course at Solvd Laba. It consists in a modification of the last
 homework (2nd), applying polymorphism concepts, protected access modifier and
 overriding Object methods as toString(), hashCode() and equals().
 
+## Explanation
+
+To accomplish the requirements of the homework, I've changed the attributes
+from class Person to protected, so they are accessible only from Employee
+and Customer child classes. I've applied polymorphism adding Customers and
+Employees in a Person array and adding the walk() abstract method in Person
+in order to make that child classes override it. Finally, I've overridden 
+toString(), hashCode() and equals() methods in each non-abstract class.
+
 ## Technologies
 
 - Java

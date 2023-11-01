@@ -1,13 +1,16 @@
 package models;
 
-public abstract class Person {
-    private String id;
-    private String firstName;
-    private String lastName;
-    private Gender gender;
-    private Country country;
+import java.util.Objects;
 
-    public Person(String id, String firstName, String lastName, Gender gender, Country country){
+public abstract class Person {
+    protected String id; // Using protected access modifier.
+    protected String firstName;
+    protected String lastName;
+    protected Gender gender;
+    protected Country country;
+
+    public Person(String id, String firstName, String lastName, Gender gender,
+                  Country country){
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -54,4 +57,6 @@ public abstract class Person {
     public void setCountry(Country country) {
         this.country = country;
     }
+
+    abstract public void walk(); // Defining an abstract method
 }

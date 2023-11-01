@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Arrays;
+
 public class Zoo {
     private String name;
     private AnimalRoom[] animalRooms;
@@ -33,5 +35,36 @@ public class Zoo {
 
     public void setDepartments(Department[] departments) {
         this.departments = departments;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Zoo zoo = (Zoo) o;
+
+        if (!name.equals(zoo.name)) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        if (!Arrays.equals(animalRooms, zoo.animalRooms)) return false;
+        // Probably incorrect - comparing Object[] arrays with Arrays.equals
+        return Arrays.equals(departments, zoo.departments);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + Arrays.hashCode(animalRooms);
+        result = 31 * result + Arrays.hashCode(departments);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Zoo{" +
+                "name='" + name + '\'' +
+                ", animalRooms=" + Arrays.toString(animalRooms) +
+                ", departments=" + Arrays.toString(departments) +
+                '}';
     }
 }

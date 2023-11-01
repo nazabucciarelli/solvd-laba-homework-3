@@ -14,4 +14,26 @@ public class Feeding {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Feeding feeding = (Feeding) o;
+
+        return name.equals(feeding.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Feeding{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
